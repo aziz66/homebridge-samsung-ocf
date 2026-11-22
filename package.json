@@ -1,0 +1,61 @@
+{
+  "name": "homebridge-samsung-ocf",
+  "displayName": "Samsung Appliances (local)",
+  "version": "0.1.0",
+  "description": "Control Samsung OCF/SmartThings appliances from HomeKit over your LAN with no Samsung cloud account. Native TypeScript, DTLS-CoAP.",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=18.0.0",
+    "homebridge": ">=1.6.0"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "samsung",
+    "smartthings",
+    "ocf",
+    "coap",
+    "dtls",
+    "local",
+    "appliance",
+    "air-conditioner",
+    "washer",
+    "dryer",
+    "refrigerator"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build && npm run test"
+  },
+  "dependencies": {
+    "werift-dtls": "0.5.8",
+    "@peculiar/x509": "^1.12.3",
+    "cbor-x": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "homebridge": "^1.8.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  },
+  "files": [
+    "dist",
+    "config.schema.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "author": "aziz66 (https://github.com/aziz66)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aziz66/homebridge-samsung-ocf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aziz66/homebridge-samsung-ocf/issues"
+  },
+  "homepage": "https://github.com/aziz66/homebridge-samsung-ocf#readme"
+}

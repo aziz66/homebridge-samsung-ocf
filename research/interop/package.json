@@ -1,0 +1,9 @@
+{
+  "name": "werift-dtls-interop-harness",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Rerunnable werift-dtls<->OpenSSL DTLS interop proof (needs openssl).",
+  "dependencies": {
+    "werift-dtls": "0.5.8"
+  }
+}

@@ -1,0 +1,33 @@
+{
+ "vectors": {
+  "get_oic_res": "4101123401b36f696303726573",
+  "get_doxm_accept": "4201abcdaabbb36f6963037265734d0072743d6f69632e722e646f786d213c",
+  "get_block2": "4101000107b66465766963650130613c6126",
+  "post_mode": "4102555509b46d6f64650276730130113cffa1781b782e636f6d2e73616d73756e672e64612e6d6f64656448656174",
+  "empty_ack": "60001234",
+  "observe_register": "41010abc1160546d6f64650276730130613c",
+  "ext_delta": "50017777b161d12405"
+ },
+ "cf_cbor": "3c",
+ "blocks": {
+  "(0, 0, 6)": "06",
+  "(2, 1, 6)": "2e",
+  "(16, 0, 4)": "0104",
+  "(1000, 1, 2)": "3e8a"
+ },
+ "codes": {
+  "GET": 1,
+  "POST": 2,
+  "DELETE": 4,
+  "TYPE_CON": 0,
+  "TYPE_NON": 1,
+  "TYPE_ACK": 2,
+  "OBSERVE": 6,
+  "BLOCK2": 23,
+  "URI_PATH": 11,
+  "URI_QUERY": 15,
+  "ACCEPT": 17,
+  "CONTENT_FORMAT": 12,
+  "SIZE1": 60
+ }
+}

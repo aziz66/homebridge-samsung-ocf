@@ -1,0 +1,67 @@
+{
+  "pluginAlias": "SamsungOCF",
+  "pluginType": "platform",
+  "singular": true,
+  "headerDisplay": "Control Samsung OCF appliances locally (no Samsung cloud). Enter each appliance's LAN IP and its DTLS secure port. See the README for finding the port and the honest coverage/limitations notes.",
+  "footerDisplay": "Reads are mapped from real appliance data; **writes are not yet verified against physical hardware** — see README.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Platform Name",
+        "type": "string",
+        "default": "SamsungOCF",
+        "required": true
+      },
+      "pollIntervalMs": {
+        "title": "Poll interval (ms)",
+        "type": "integer",
+        "default": 30000,
+        "minimum": 5000,
+        "description": "How often to re-read the appliance's full state."
+      },
+      "appliances": {
+        "title": "Appliances",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string",
+              "required": true,
+              "description": "Shown in HomeKit."
+            },
+            "host": {
+              "title": "IP address",
+              "type": "string",
+              "required": true,
+              "format": "ipv4"
+            },
+            "port": { "title": "DTLS secure port (optional)", "type": "integer", "description": "The appliance's OCF secure (coaps) UDP port. Optional: if omitted, discovered from the appliance's plaintext /oic/res. It varies per unit and after a power cycle." },
+            "uuid": {
+              "title": "Client UUID (advanced)",
+              "type": "string",
+              "description": "Override the authorizing certificate UUID. Leave blank to use the standard one."
+            },
+            "allowRemoteOffWrites": {
+              "title": "Allow writes when remote control is off",
+              "type": "boolean",
+              "default": false,
+              "description": "By default a write is refused when the appliance reports remote control off (it would be ignored). Enable only if you confirm yours accepts it."
+            },
+            "observeHrefs": {
+              "title": "OBSERVE hrefs (advanced)",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Resource hrefs to subscribe to for push updates, e.g. /power/vs/0."
+            },
+            "optionalModes": { "title": "AC optional modes (advanced)", "type": "array", "items": { "type": "string" }, "description": "Air-conditioner convenient modes to expose as switches, e.g. Sleep, Quiet, Speed, WindFree. Must match the device's supported modes." }
+          }
+        }
+      }
+    }
+  }
+}
